@@ -1,0 +1,9 @@
+steps:
+  - label: ':nail_care: Lint and Tests'
+    command:
+      - yarn install --frozen-lockfile
+      - yarn run build && yarn run jest
+    plugins:
+      - docker#v3.2.0:
+          image: 'node:10.15'
+          always-pull: false

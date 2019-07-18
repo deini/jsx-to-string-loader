@@ -1,3 +1,7 @@
+## jsx-to-string webpack loader
+
+[![Build status](https://badge.buildkite.com/7b06f4a0e69daeeaddf022521fe20202dc99ad1399cb2e0f8c.svg)](https://buildkite.com/ammo/jsx-to-string-loader)
+
 ### Installation
 
 `yarn add jsx-to-string-loader --dev`
