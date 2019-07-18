@@ -11,7 +11,8 @@
   "scripts": {
     "build": "tsc",
     "test": "jest",
-    "prepublish": "yarn run test && yarn run build"
+    "prerelease": "yarn run test && yarn run build",
+    "release": "standard-version"
   },
   "husky": {
     "hooks": {
@@ -30,6 +31,7 @@
     "jest": "^24.8.0",
     "lint-staged": "^9.2.0",
     "prettier": "^1.18.2",
+    "standard-version": "^6.0.1",
     "ts-jest": "^24.0.2",
     "typescript": "^3.5.3"
   }
