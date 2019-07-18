@@ -26,6 +26,10 @@ export default function jsxToStringLoader(source: string): string {
       sourceArr[end - 1] = sourceArr[end - 1].replace('}', '');
     }
 
+    // Remove extra lines
+    sourceArr.splice(end - 1, 2, sourceArr[end - 1].concat(sourceArr[end]));
+    sourceArr.splice(start, 2, sourceArr[start].concat(sourceArr[start + 1]));
+
     return jsxToStringLoader(sourceArr.join('\n'));
   }
 

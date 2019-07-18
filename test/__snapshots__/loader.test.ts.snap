@@ -2,8 +2,7 @@
 
 exports[`JS expressions 1`] = `
 "
-{\`
-function Example() {
+{\`function Example() {
   const [activeTab, setActiveTab] = React.useState('tab1');
 
   return (
@@ -24,51 +23,40 @@ function Example() {
       </Box>
     </>
   );
-}
-\`}
+}\`}
   "
 `;
 
 exports[`multi-line JSX 1`] = `
 "
-{\`
-<div>
+{\`<div>
   <Button>Test Button</Button>
-</div>
-\`}
+</div>\`}
   "
 `;
 
 exports[`multiple keys in the same file 1`] = `
 "
-{\`
-<div>
+{\`<div>
   <Button>Test Button 1</Button>
-</div>
-\`}
+</div>\`}
 
-{\`
-<div>
+{\`<div>
   <Button>Test Button 2</Button>
-</div>
-\`}
+</div>\`}
   "
 `;
 
 exports[`single line JSX 1`] = `
 "
-{\`
-<Button>Test Button</Button>
-\`}
+{\`<Button>Test Button</Button>\`}
   "
 `;
 
 exports[`works outside jsx 1`] = `
 "
-\`
-<div>
+\`<div>
   <Button>Test Button</Button>
-</div>
-\`
+</div>\`
   "
 `;
