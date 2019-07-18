@@ -2,11 +2,12 @@
   "name": "jsx-to-string-loader",
   "version": "1.0.0",
   "description": "JSX to string Webpack Loader",
-  "main": "index.js",
+  "main": "dist/index.js",
   "repository": "https://github.com/deini/jsx-to-string-loader",
   "author": "Daniel Almaguer",
   "license": "MIT",
   "private": false,
+  "files": ["dist"],
   "scripts": {
     "build": "tsc",
     "test": "jest",
@@ -19,10 +20,7 @@
     }
   },
   "lint-staged": {
-    "*.{ts,tsx}": [
-      "prettier --write",
-      "git add"
-    ]
+    "*.{ts,tsx}": ["prettier --write", "git add"]
   },
   "devDependencies": {
     "@commitlint/cli": "^8.1.0",
