@@ -23,4 +23,4 @@ module: {
 }
 ```
 
-Make sure `jsx-to-string-loader` comes **after** loaders like `babel-loader` or `ts-loader
+Make sure `jsx-to-string-loader` comes **after** loaders such as `babel-loader` or `ts-loader`.
