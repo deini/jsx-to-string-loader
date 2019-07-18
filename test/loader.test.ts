@@ -2,9 +2,9 @@ import jsxToStringLoader, { START_KEY, END_KEY } from '../index';
 
 test('single line JSX', () => {
   const code = `
-    ${START_KEY}
+    {${START_KEY}}
     <Button>Test Button</Button>
-    ${END_KEY}
+    {${END_KEY}}
   `;
 
   expect(jsxToStringLoader(code)).toMatchSnapshot();
@@ -12,11 +12,11 @@ test('single line JSX', () => {
 
 test('multi-line JSX', () => {
   const code = `
-    ${START_KEY}
+    {${START_KEY}}
     <div>
       <Button>Test Button</Button>
     </div>
-    ${END_KEY}
+    {${END_KEY}}
   `;
 
   expect(jsxToStringLoader(code)).toMatchSnapshot();
@@ -24,17 +24,17 @@ test('multi-line JSX', () => {
 
 test('multiple keys in the same file', () => {
   const code = `
-    ${START_KEY}
+    {${START_KEY}}
     <div>
       <Button>Test Button 1</Button>
     </div>
-    ${END_KEY}
+    {${END_KEY}}
 
-    ${START_KEY}
+    {${START_KEY}}
     <div>
       <Button>Test Button 2</Button>
     </div>
-    ${END_KEY}
+    {${END_KEY}}
   `;
 
   expect(jsxToStringLoader(code)).toMatchSnapshot();
@@ -42,7 +42,7 @@ test('multiple keys in the same file', () => {
 
 test('JS expressions', () => {
   const code = `
-  ${START_KEY}
+  {${START_KEY}}
   {function Example() {
     const [activeTab, setActiveTab] = React.useState('tab1');
 
@@ -65,7 +65,19 @@ test('JS expressions', () => {
       </>
     );
   }}
-  ${END_KEY}
+  {${END_KEY}}
+  `;
+
+  expect(jsxToStringLoader(code)).toMatchSnapshot();
+});
+
+test('works outside jsx', () => {
+  const code = `
+    ${START_KEY}
+    <div>
+      <Button>Test Button</Button>
+    </div>
+    ${END_KEY}
   `;
 
   expect(jsxToStringLoader(code)).toMatchSnapshot();

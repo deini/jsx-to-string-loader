@@ -7,8 +7,10 @@ export default function jsxToStringLoader(source: string): string {
   const end = sourceArr.findIndex(line => line.includes(END_KEY));
 
   if (start !== -1 && end !== -1) {
-    sourceArr[start] = '{`';
-    sourceArr[end] = '`}';
+    // If we find {} we assume its jsx:  {/* jsx-to-string:start */}
+    // If not we just wrap the content in `
+    sourceArr[start] = sourceArr[start].includes('{') ? '{`' : '`';
+    sourceArr[end] = sourceArr[end].includes('}') ? '`}' : '`';
 
     // Number or white-spaces to remove to all lines
     const leftPad = sourceArr[start + 1].search(/\S|$/);

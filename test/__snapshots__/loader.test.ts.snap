@@ -62,3 +62,13 @@ exports[`single line JSX 1`] = `
 \`}
   "
 `;
+
+exports[`works outside jsx 1`] = `
+"
+\`
+<div>
+  <Button>Test Button</Button>
+</div>
+\`
+  "
+`;
