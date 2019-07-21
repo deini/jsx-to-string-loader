@@ -18,6 +18,7 @@ export default function jsxToStringLoader(source: string): string {
     // Remove extra white-spaces
     for (let i = start + 1; i < end; i++) {
       sourceArr[i] = sourceArr[i].substr(leftPad);
+      sourceArr[i] = sourceArr[i].replace(/`/g, '\\`');
     }
 
     // Remove extra {} on JS Expressions
