@@ -15,10 +15,11 @@ export default function jsxToStringLoader(source: string): string {
     // Number or white-spaces to remove to all lines
     const leftPad = sourceArr[start + 1].search(/\S|$/);
 
-    // Remove extra white-spaces
+    // Remove extra white-spaces, escape backticks and ${}
     for (let i = start + 1; i < end; i++) {
       sourceArr[i] = sourceArr[i].substr(leftPad);
-      sourceArr[i] = sourceArr[i].replace(/`/g, '\\`');
+      sourceArr[i] = sourceArr[i].replace(/(?<!\\)`/g, '\\`');
+      sourceArr[i] = sourceArr[i].replace(/(?<!\\)\${/g, '\\${');
     }
 
     // Remove extra {} on JS Expressions
